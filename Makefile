@@ -55,10 +55,11 @@ help: ## show this help message
 
 reinstall_backend: ## forces reinstall all dependencies (no caching)
 	@echo 'Installing backend dependencies'
-	@uv sync -n --reinstall --frozen
+	@uv sync --frozen
 
 install_backend: ## install the backend dependencies
 	@echo 'Installing backend dependencies'
+	@uv pip install psycopg2-binary==2.9.10
 	@uv sync --frozen
 
 install_frontend: ## install the frontend dependencies
